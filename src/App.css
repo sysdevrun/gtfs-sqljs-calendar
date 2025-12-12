@@ -373,7 +373,7 @@
 
 .day-summary {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
@@ -402,6 +402,10 @@
 
 .summary-item.trips .number {
   color: var(--primary-color);
+}
+
+.summary-item.base .number {
+  color: var(--warning-color);
 }
 
 .summary-item .label {
@@ -453,6 +457,10 @@
 
 .calendar-list.excluded h3 {
   color: var(--danger-color);
+}
+
+.calendar-list.base h3 {
+  color: var(--warning-color);
 }
 
 .empty-message {
@@ -827,6 +835,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .day-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .app-header {
     padding: 1.5rem 1rem;

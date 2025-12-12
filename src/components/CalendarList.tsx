@@ -5,15 +5,21 @@ import { parseGTFSDate } from '../utils/calendarService';
 interface CalendarListProps {
   title: string;
   calendars: CalendarDayStatus[];
-  type: 'active' | 'excluded';
+  type: 'active' | 'excluded' | 'base';
 }
+
+const typeLabels: Record<CalendarListProps['type'], string> = {
+  active: 'active',
+  excluded: 'excluded',
+  base: 'base',
+};
 
 export function CalendarList({ title, calendars, type }: CalendarListProps) {
   if (calendars.length === 0) {
     return (
       <div className={`calendar-list ${type}`}>
         <h3>{title}</h3>
-        <p className="empty-message">No {type === 'active' ? 'active' : 'excluded'} calendars</p>
+        <p className="empty-message">No {typeLabels[type]} calendars</p>
       </div>
     );
   }

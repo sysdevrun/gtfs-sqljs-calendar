@@ -122,6 +122,10 @@ function App() {
                 </h2>
 
                 <div className="day-summary">
+                  <div className="summary-item base">
+                    <span className="number">{dayInfo.baseCalendars.length}</span>
+                    <span className="label">Base Calendars</span>
+                  </div>
                   <div className="summary-item active">
                     <span className="number">{dayInfo.activeCalendars.length}</span>
                     <span className="label">Active Calendars</span>
@@ -139,7 +143,12 @@ function App() {
                 <div className="day-content">
                   <div className="calendars-section">
                     <CalendarList
-                      title="Active Calendars"
+                      title="Base Calendars (Regular Schedule)"
+                      calendars={dayInfo.baseCalendars}
+                      type="base"
+                    />
+                    <CalendarList
+                      title="Active Calendars (After Exceptions)"
                       calendars={dayInfo.activeCalendars}
                       type="active"
                     />
