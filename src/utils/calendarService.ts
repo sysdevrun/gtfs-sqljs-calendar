@@ -141,14 +141,40 @@ export function getTripsForDate(gtfsData: GTFSData, date: Date): TripWithRoute[]
     }));
 }
 
+// Get calendars that match by regular rules (date range + day of week), ignoring exceptions
+export function getBaseCalendarsForDate(
+  gtfsData: GTFSData,
+  date: Date
+): CalendarDayStatus[] {
+  const baseCalendars: CalendarDayStatus[] = [];
+
+  for (const calendar of gtfsData.calendars) {
+    const isInRange = isDateInCalendarRange(calendar, date);
+    const isActiveDay = isCalendarActiveOnDayOfWeek(calendar, date);
+
+    if (isInRange && isActiveDay) {
+      baseCalendars.push({
+        service_id: calendar.service_id,
+        isActive: true,
+        isException: false,
+        calendar,
+      });
+    }
+  }
+
+  return baseCalendars;
+}
+
 // Get complete day info
 export function getDayInfo(gtfsData: GTFSData, date: Date): DayInfo {
   const { active, excluded } = getCalendarStatusForDate(gtfsData, date);
+  const baseCalendars = getBaseCalendarsForDate(gtfsData, date);
   const activeTrips = getTripsForDate(gtfsData, date);
 
   return {
     date,
     dateString: formatGTFSDate(date),
+    baseCalendars,
     activeCalendars: active,
     excludedCalendars: excluded,
     activeTrips,

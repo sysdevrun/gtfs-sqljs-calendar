@@ -73,6 +73,7 @@ export interface TripWithRoute extends GTFSTrip {
 export interface DayInfo {
   date: Date;
   dateString: string; // YYYYMMDD format
+  baseCalendars: CalendarDayStatus[]; // Calendars matching by regular rules (before exceptions)
   activeCalendars: CalendarDayStatus[];
   excludedCalendars: CalendarDayStatus[];
   activeTrips: TripWithRoute[];
