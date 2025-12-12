@@ -49,8 +49,9 @@ export function DateSelector({ gtfsData, selectedDate, onDateSelect }: DateSelec
     return eachDayOfInterval({ start, end });
   }, [currentMonth]);
 
-  // Get starting day offset (0 = Sunday)
-  const startOffset = getDay(startOfMonth(currentMonth));
+  // Get starting day offset (0 = Monday for Monday-start calendar)
+  // getDay returns 0=Sunday, so we convert: (day + 6) % 7 makes Monday=0
+  const startOffset = (getDay(startOfMonth(currentMonth)) + 6) % 7;
 
   const handlePrevMonth = () => {
     setCurrentMonth((prev) => subMonths(prev, 1));
@@ -60,7 +61,7 @@ export function DateSelector({ gtfsData, selectedDate, onDateSelect }: DateSelec
     setCurrentMonth((prev) => addMonths(prev, 1));
   };
 
-  const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const weekDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
   if (!dateRange) {
     return (
