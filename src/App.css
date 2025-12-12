@@ -1,0 +1,870 @@
+/* App Layout */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header .subtitle {
+  opacity: 0.9;
+  margin: 0;
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-footer {
+  background-color: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Upload Section */
+.upload-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.file-upload {
+  margin-bottom: 2rem;
+}
+
+.drop-zone {
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  background-color: var(--card-bg);
+}
+
+.drop-zone:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(37, 99, 235, 0.05);
+}
+
+.drop-zone.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.drop-zone input[type="file"] {
+  display: none;
+}
+
+.drop-zone label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-icon {
+  font-size: 3rem;
+}
+
+.upload-text {
+  color: var(--text-muted);
+}
+
+.loading-text {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.file-info {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.file-info details {
+  margin-top: 0.5rem;
+}
+
+.file-info summary {
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.file-list {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.file-list li {
+  padding: 0.25rem 0;
+  font-family: monospace;
+}
+
+.file-list li.highlight {
+  color: var(--success-color);
+  font-weight: 500;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: rgba(220, 38, 38, 0.1);
+  border: 1px solid var(--danger-color);
+  border-radius: 8px;
+  color: var(--danger-color);
+}
+
+.info-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.info-box h3 {
+  margin-bottom: 1rem;
+}
+
+.info-box ul {
+  text-align: left;
+  padding-left: 1.5rem;
+  list-style: disc;
+}
+
+.info-box li {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(22, 163, 74, 0.1);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--success-color);
+}
+
+/* Data Overview Section */
+.data-overview {
+  margin-bottom: 2rem;
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.clear-btn {
+  background-color: transparent;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.25rem;
+}
+
+/* Date Section */
+.date-section {
+  margin-bottom: 2rem;
+}
+
+.date-section h2 {
+  margin-bottom: 1rem;
+}
+
+/* Date Selector Component */
+.date-selector {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.date-selector.empty {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.date-range-info {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.date-count {
+  opacity: 0.7;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-nav h3 {
+  font-size: 1.1rem;
+}
+
+.nav-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem;
+}
+
+.calendar-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0.25rem;
+}
+
+.calendar-cell.empty {
+  cursor: default;
+}
+
+.calendar-cell.unavailable {
+  color: var(--text-muted);
+  opacity: 0.4;
+}
+
+.calendar-cell.available {
+  background-color: rgba(37, 99, 235, 0.1);
+  cursor: pointer;
+}
+
+.calendar-cell.available:hover {
+  background-color: rgba(37, 99, 235, 0.2);
+  border-color: var(--primary-color);
+  color: inherit;
+}
+
+.calendar-cell.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.calendar-cell .service-count {
+  font-size: 0.625rem;
+  opacity: 0.7;
+}
+
+/* Date List Quick Select */
+.date-list {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.date-list h4 {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.date-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.date-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  min-width: 70px;
+}
+
+.date-btn.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.date-btn-day {
+  font-weight: 600;
+}
+
+.date-btn-date {
+  font-size: 0.625rem;
+  opacity: 0.8;
+}
+
+.date-btn-services {
+  font-size: 0.625rem;
+  opacity: 0.7;
+}
+
+/* Day Details Section */
+.day-details h2 {
+  margin-bottom: 1rem;
+}
+
+.day-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.summary-item .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.summary-item.active .number {
+  color: var(--success-color);
+}
+
+.summary-item.excluded .number {
+  color: var(--danger-color);
+}
+
+.summary-item.trips .number {
+  color: var(--primary-color);
+}
+
+.summary-item .label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.day-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .day-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Calendar List Component */
+.calendar-list {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-list h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.calendar-list h3 .count {
+  font-weight: normal;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.calendar-list.active h3 {
+  color: var(--success-color);
+}
+
+.calendar-list.excluded h3 {
+  color: var(--danger-color);
+}
+
+.empty-message {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.calendar-group {
+  margin-bottom: 1rem;
+}
+
+.calendar-group:last-child {
+  margin-bottom: 0;
+}
+
+.calendar-group h4 {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.badge.added {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.badge.removed {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.calendar-item {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: 6px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .calendar-item {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.calendar-item:last-child {
+  margin-bottom: 0;
+}
+
+.calendar-item.exception.added {
+  border-left: 3px solid var(--success-color);
+}
+
+.calendar-item.exception.removed {
+  border-left: 3px solid var(--danger-color);
+}
+
+.calendar-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.service-id {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.exception-badge {
+  font-size: 0.625rem;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.exception-badge.added {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.exception-badge.removed {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.calendar-item-details {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.days-of-week {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.day-indicator {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+}
+
+.day-indicator.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.day-indicator.inactive {
+  background-color: var(--border-color);
+  color: var(--text-muted);
+}
+
+.date-range {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.date-range .label {
+  color: var(--text-muted);
+}
+
+.exception-only {
+  font-style: italic;
+}
+
+/* Trips List Component */
+.trips-list {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.trips-list.empty {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.trips-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.trips-header h3 {
+  font-size: 1rem;
+}
+
+.trips-header .count {
+  font-weight: normal;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.trips-stats {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.trips-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 200px;
+  position: relative;
+}
+
+.search-box input {
+  padding-right: 2rem;
+}
+
+.clear-search {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.25rem;
+  color: var(--text-muted);
+}
+
+.clear-search:hover {
+  color: var(--danger-color);
+  background: transparent;
+}
+
+.view-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-controls button {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+}
+
+.search-results-info {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(37, 99, 235, 0.1);
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--primary-color);
+}
+
+/* Route Groups */
+.trips-by-route {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.route-group {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.route-group:last-child {
+  margin-bottom: 0;
+}
+
+.route-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: none;
+  border-radius: 0;
+  border-left: 4px solid var(--border-color);
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .route-header {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.route-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .route-header:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.expand-icon {
+  font-size: 0.625rem;
+  width: 1rem;
+  color: var(--text-muted);
+}
+
+.route-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.route-name {
+  flex: 1;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trip-count {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.route-trips {
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+.route-trips table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+
+.route-trips th {
+  text-align: left;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .route-trips th {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}
+
+.route-trips th:hover {
+  color: var(--primary-color);
+}
+
+.route-trips td {
+  padding: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.route-trips .trip-id {
+  font-family: monospace;
+  font-size: 0.6875rem;
+}
+
+.route-trips .headsign {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.route-trips .service-id {
+  font-family: monospace;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.route-trips .direction {
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .app-main {
+    padding: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .day-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-grid {
+    gap: 2px;
+  }
+
+  .calendar-cell {
+    font-size: 0.75rem;
+  }
+
+  .trips-controls {
+    flex-direction: column;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .view-controls {
+    justify-content: flex-end;
+  }
+}
