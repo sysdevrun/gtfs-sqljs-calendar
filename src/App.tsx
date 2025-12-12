@@ -122,13 +122,13 @@ function App() {
                 </h2>
 
                 <div className="day-summary">
+                  <div className="summary-item active">
+                    <span className="number">{dayInfo.activeCalendars.length}</span>
+                    <span className="label">Computed Calendars</span>
+                  </div>
                   <div className="summary-item base">
                     <span className="number">{dayInfo.baseCalendars.length}</span>
                     <span className="label">Base Calendars</span>
-                  </div>
-                  <div className="summary-item active">
-                    <span className="number">{dayInfo.activeCalendars.length}</span>
-                    <span className="label">Active Calendars</span>
                   </div>
                   <div className="summary-item excluded">
                     <span className="number">{dayInfo.excludedCalendars.length}</span>
@@ -143,14 +143,14 @@ function App() {
                 <div className="day-content">
                   <div className="calendars-section">
                     <CalendarList
+                      title="Computed Calendars (Final Result)"
+                      calendars={dayInfo.activeCalendars}
+                      type="active"
+                    />
+                    <CalendarList
                       title="Base Calendars (Regular Schedule)"
                       calendars={dayInfo.baseCalendars}
                       type="base"
-                    />
-                    <CalendarList
-                      title="Active Calendars (After Exceptions)"
-                      calendars={dayInfo.activeCalendars}
-                      type="active"
                     />
                     <CalendarList
                       title="Excluded Calendars"
