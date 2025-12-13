@@ -5,6 +5,7 @@ import { FileUpload } from './components/FileUpload';
 import { DateSelector } from './components/DateSelector';
 import { CalendarList } from './components/CalendarList';
 import { TripsList } from './components/TripsList';
+import { ValidationReport } from './components/ValidationReport';
 import { getDayInfo, getServiceStats } from './utils/calendarService';
 import './App.css';
 
@@ -165,6 +166,10 @@ function App() {
                 </div>
               </section>
             )}
+
+            <section className="validation-section">
+              <ValidationReport gtfsData={gtfsData} />
+            </section>
           </>
         )}
       </main>
